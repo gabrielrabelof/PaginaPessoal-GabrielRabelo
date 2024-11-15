@@ -628,27 +628,51 @@ footer .col-b li a:hover {
     }
 
     /* #################### Skills #################### */
-
-    #skills {
-        padding-top: 10rem;
+    
+    #skills .carousel {
+        gap: 2rem;
+    
+        flex-wrap: wrap;
     }
-
-    #skills .banner {
-        margin-top: 10rem;
-        padding-block: 2.4rem;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        border-top: 1px solid var(--blue-700);
-        border-bottom: 1px solid var(--blue-700);
-
-        background-color: rgba(2, 6, 23, 0.7);
+    
+    #skills .carousel img {
+        width: 7rem;
+        height: 7.5rem;
     }
-
+    
     #skills .wrapper .cards {
-        justify-content: center;
+        margin-top: 5.2rem;
+        gap: 4rem;
+    
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    #skills .wrapper .cards .card {
+        height: 18rem;
+        width: 35.5rem;
+        padding: 1.8rem;
+        gap: 1.8rem;
+    
+        border-bottom: 4px solid var(--primary-color);
+        border-radius: 8px;
+    
+        display: flex;
+        flex-direction: column;
+    
+        background-color: var(--blue-700);
+    }
+    
+    #skills .wrapper .cards .card i {
+        font-size: 40px;
+        color: var(--primary-color);
+    }
+    
+    #skills .wrapper .cards .card span {
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 160%;
+        color: var(--white-100);
     }
 
     /* #################### Contact #################### */
