@@ -1,0 +1,689 @@
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #60A5FA; 
+    --primary-dark: #1D4ED8; 
+    
+    --white: #FFFFFF;
+    --white-50: #F1F5FF;
+    --white-100: #CBD5E1;
+
+    --blue-300: #cbd5e1;
+    --blue-500: #64748b;
+    --blue-700: #1E293B;
+    --blue-800: #0F172A;
+
+    font-size: 62.5%;
+}
+
+html,
+body {
+    height: 100vh;
+    width: 100vw;
+}
+
+body {
+    padding-bottom: 4rem;
+
+    overflow-x: hidden;
+
+    font-family: "Plus Jakarta Sans", sans-serif;
+    background-color: var(--blue-800);
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--white-50);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.wrapper {
+    width: min(118rem, 100%);
+    padding-inline: 2.4rem;
+
+    margin-inline: auto;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+
+
+/* #################### Navigation #################### */
+
+#nav {
+    height: 9.6rem;
+    width: 100%;
+    padding: 5.2rem 7.2rem 4.8rem 7.2rem;
+    z-index: 999;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+
+    transition: all 0.3s ease;
+}
+
+#nav.scrolled {
+    border-bottom: 1px solid var(--blue-700);
+
+    background-color: rgba(2, 6, 23, 0.9);
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--white-50);
+}
+
+.nav-links {
+    gap: 2.8rem;
+
+    display: flex;
+}
+
+.nav-links li a {
+    padding-bottom: 0.8rem;
+
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--white-50);
+
+    border-bottom: 2px solid transparent; 
+    
+    transition: all 0.3s ease;
+}
+
+.nav-links li a:hover {
+    border-bottom: 2px solid var(--primary-color);
+
+    transform: scaleX(1);
+    color: var(--primary-color);
+}
+
+.nav-links li a.selected {
+    border-bottom: 2px solid var(--primary-color);
+
+    transform: scaleX(1);
+    color: var(--primary-color);
+}
+
+.nav-links li a:not(:hover) {
+    transform: scaleX(0); 
+}
+
+.menu {
+    height: 1.8rem;
+    width: 2.4rem;
+
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.bar {
+    width: 100%;
+    height: 0.2rem;
+    background-color: #fff;
+    transition: 0.3s;
+}
+
+.nav-links.open {
+    display: block;
+}
+
+.menu.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+.social-media {
+    display: none;
+}
+
+
+
+/* #################### About #################### */
+
+#about .wrapper {
+    padding-top: 14rem;
+    padding-bottom: 5.2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.highlight {
+    gap: 2.4rem;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.highlight h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: var(--white-50);
+}
+
+.highlight span {
+    background: linear-gradient(90deg, var(--primary-dark), var(--primary-color));
+    background-clip: text; 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+.highlight p {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--white-100);
+}
+
+#about img {
+    width: 44rem;
+}
+
+/* #################### Projects #################### */
+
+#projects {
+    padding-block: 11rem;
+
+    background-color: var(--blue-700);
+}
+
+.project-gallery {
+    margin-top: 3.2rem;
+    gap: 3rem;
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.project-gallery .project img {
+    margin-bottom: 2rem;
+
+    transition: all 0.3s ease;
+    filter: saturate(0);
+}
+
+.project-gallery .project img:hover {
+    cursor: pointer;
+    transform: scale(1.025);
+    filter: saturate(1);
+}
+
+.project-gallery .project .project-details {
+    gap: 0.8rem;
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.project-gallery .project h4 {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--white-50);
+}
+
+.project-gallery .project h5 {
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.project-gallery .project p {
+    font-size: 14px;
+    color: var(--white-100);
+}
+
+/* #################### Skills #################### */
+
+#skills {
+    padding-top: 12rem;
+    padding-bottom: 5.4rem;
+}
+
+#skills p {
+    margin-top: 0.8rem;
+
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--white-100);
+}
+
+#skills .banner {
+    margin-top: 10rem;
+    padding-block: 2rem;
+
+    
+
+    border-top: 1px solid var(--blue-700);
+    border-bottom: 1px solid var(--blue-700);
+
+    background-color: rgba(2, 6, 23, 0.7);
+}
+
+#skills .carousel {
+    gap: 8rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#skills .carousel img {
+    filter: saturate(0);
+}
+
+#skills .wrapper .cards {
+    margin-top: 5.2rem;
+    gap: 3rem;
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#skills .wrapper .cards .card {
+    height: 18rem;
+    width: 35.5rem;
+    padding: 1.8rem;
+    gap: 1.8rem;
+
+    border-bottom: 4px solid var(--primary-color);
+    border-radius: 8px;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--blue-700);
+}
+
+#skills .wrapper .cards .card i {
+    font-size: 40px;
+    color: var(--primary-color);
+}
+
+#skills .wrapper .cards .card span {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 160%;
+    color: var(--white-100);
+}
+
+/* #################### Contact #################### */
+
+#contact {
+    padding-top: 10rem;
+    padding-bottom: 18rem;
+}
+
+#contact .wrapper h3 {
+    margin-top: 1.8rem;
+
+    font-size: 28px;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+#contact p {
+    margin-top: 1.6rem;
+
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--white-100);
+}
+
+#contact .cta {
+    margin-top: 7.2rem;
+    gap: 2rem;
+
+    display: flex;
+    align-items: center;
+}
+
+#contact .cta .curriculum-button {
+    padding: 1.2rem 2.4rem;
+    gap: 0.8rem;
+
+    border-radius: 4px;
+
+    display: flex;
+    align-items: center;
+
+    background-color: var(--primary-dark);
+
+    transition: all 0.3s ease-in-out;
+}
+
+#contact .cta .curriculum-button:hover {
+    color: var(--white-100);
+    background-color: var(--primary-color);
+}
+
+#contact .cta .curriculum-button span {
+    font-size: 18px;
+    color: var(--white);
+}
+
+#contact .cta .curriculum-button i {
+    font-size: 22px;
+    color: white;
+}
+
+#contact .cta .contact-button {
+    padding: 1.2rem 2.4rem;
+    gap: 0.8rem;
+
+    border: 1px solid var(--blue-700);
+    border-radius: 4px;
+
+    display: flex;
+    align-items: center;
+
+    transition: all 0.3s ease-in-out;
+}
+
+#contact .cta .contact-button:hover {
+    border: 1px solid var(--blue-500);
+
+    background-color: var(--blue-700);
+}
+
+#contact .cta .contact-button span {
+    font-size: 18px;
+    color: var(--primary-color);
+}
+
+#contact .cta .contact-button i {
+    font-size: 22px;
+    color: var(--primary-color);
+}
+
+/* #################### Footer #################### */
+
+footer {
+    padding-block: 5.4rem;
+
+    background-color: var(--blue-700);
+}
+
+footer .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer h4 {
+    font-size: 20px;
+
+    background: linear-gradient(90deg, var(--primary-dark), var(--white-100));
+    background-clip: text; 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+footer .col-a {
+    gap: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+footer .col-a i {
+    font-size: 18px;
+}
+
+footer .col-a a, footer .col-a span {
+    gap: 0.8rem;
+    
+    display: flex;
+
+    font-size: 14px;
+    color: var(--white-100);
+
+    transition: all 0.2s ease;
+}
+footer .col-a a:hover {
+    color: var(--blue-500);
+}
+
+footer .col-b {
+    gap: 3rem;
+
+    display: flex;
+}
+
+footer .col-b li a {
+    font-size: 28px;
+    color: var(--white);
+
+    transition: all 0.2s ease;
+}
+
+footer .col-b li a:hover {
+    color: var(--blue-300);
+}
+
+/* #################### Responsive #################### */
+
+@media (max-width: 1280px) {
+
+    /* #################### Navigation #################### */
+
+    .menu {
+        display: flex;
+    }
+    
+    #nav {
+        height: 7.2rem;
+        padding: 1.2rem 1.2rem;
+    }
+    
+    #nav.open {
+        height: 100%;
+        gap: 6rem;
+    
+        flex-direction: column;
+        justify-content: center;
+    
+        background-color: var(--blue-700);
+    }
+    
+    #nav.open .menu {
+        position: absolute;
+        top: 2.4rem;
+        right: 1.8rem;
+    }
+    
+    .logo {
+        font-size: 18px;
+    }
+    
+    .nav-links {
+        display: none;
+    }
+    
+    .nav-links.open {
+        width: 100%;
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .nav-links li a {
+        font-size: 20px;
+        font-weight: 500;
+        color: var(--white-50);
+    
+        transition: all 0.3s ease;
+    }
+    
+    .nav-links li a:hover {
+        border-bottom: none;
+    
+        transform: none;
+        color: var(--white-50);
+    }
+    
+    .nav-links li a.selected {
+        border-bottom: none;
+    
+        transform: none;
+        color: var(--white-50);
+    }
+    
+    .nav-links li a:not(:hover) {
+        transform: none
+    }
+    
+    #nav.open .social-media {
+        width: 100%;
+        margin-top: 1.2rem;
+        gap: 2.4rem;
+    
+        display: flex;
+        justify-content: center;
+    }
+    
+    .social-media li a {
+        font-size: 28px;
+        color: var(--white);
+    }
+    
+    #nav.open .logo {
+        display: none;
+    }
+
+
+    /* #################### About #################### */
+
+    #about .wrapper {
+        flex-direction: column;
+    }
+
+    .highlight h1 {
+        font-size: 28px;
+    }
+
+    .highlight p {
+        font-size: 12px;
+        font-weight: 400;
+        color: var(--white-100);
+    }
+
+    #about img {
+        width: 36rem;
+    }
+
+    /* #################### Projects #################### */
+
+    #projects {
+        padding-block: 7rem;
+    }
+
+    .project-gallery {
+        gap: 6rem;
+
+        justify-content: center;
+    }
+
+    .project-gallery .project img {
+        width: 80%;
+        margin-bottom: 1rem;
+
+        filter: saturate(1);
+    }
+
+    .project-gallery .project .project-details {
+        gap: 0.4rem;
+    }
+
+    /* #################### Skills #################### */
+
+    #skills {
+        padding-top: 10rem;
+    }
+
+    #skills .banner {
+        margin-top: 10rem;
+        padding-block: 2.4rem;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border-top: 1px solid var(--blue-700);
+        border-bottom: 1px solid var(--blue-700);
+
+        background-color: rgba(2, 6, 23, 0.7);
+    }
+
+    #skills .wrapper .cards {
+        justify-content: center;
+    }
+
+    /* #################### Contact #################### */
+
+    #contact .cta {
+        display: grid;
+    }
+
+    #contact .cta .curriculum-button, #contact .cta .contact-button {
+        width: 23.3rem;
+
+        justify-content: center;
+    }
+
+    /* #################### Footer #################### */
+
+    footer .col-b {
+        display: none;
+    }
+}
+
+/* #################### webkit #################### */
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+
+    background-color: var(--blue-500);
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 8px;
+
+    background-color: var(--blue-700);
+}
