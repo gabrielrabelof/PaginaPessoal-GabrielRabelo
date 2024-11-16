@@ -280,7 +280,8 @@ a {
     margin-top: 10rem;
     padding-block: 2rem;
 
-    
+    position: relative;
+    overflow: hidden;
 
     border-top: 1px solid var(--blue-700);
     border-bottom: 1px solid var(--blue-700);
@@ -288,16 +289,26 @@ a {
     background-color: rgba(2, 6, 23, 0.7);
 }
 
-#skills .carousel {
+#skills .banner .banner-images {
+    display: flex;
     gap: 8rem;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: relative;
+    width: calc(100%);
+    animation: anim-imgs 15s linear infinite;
 }
 
-#skills .carousel img {
+#skills .banner img {
     filter: saturate(0);
+}
+
+@keyframes anim-imgs {
+    from {
+        transform: translateX(-1203px);
+    }
+    to {
+        transform: translateX(0);
+    }
 }
 
 #skills .wrapper .cards {
@@ -587,6 +598,7 @@ footer .col-b li a:hover {
     /* #################### About #################### */
 
     #about .wrapper {
+        gap: 2rem;
         flex-direction: column;
     }
 
@@ -601,7 +613,7 @@ footer .col-b li a:hover {
     }
 
     #about img {
-        width: 36rem;
+        width: 32rem;
     }
 
     /* #################### Projects #################### */
